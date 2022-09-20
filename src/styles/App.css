@@ -1,0 +1,180 @@
+/* ASIDE */
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  /* We tell all items to be 100% width, via flex-basis */
+  .wrapper > * {
+    flex: 1 100%;
+  }
+  
+  /* We rely on source order for mobile-first approach
+   * in this case:
+   * 1. header
+   * 2. article
+   * 3. aside 1
+   * 4. aside 2
+   * 5. footer
+   */
+  
+  /* Medium screens */
+  @media all and (min-width: 600px) {
+    /* We tell both sidebars to share a row */
+    .aside { flex: 1 auto; }
+  }
+  
+  /* Large screens */
+  @media all and (min-width: 800px) {
+    /* We invert order of first sidebar and main
+     * And tell the main element to take twice as much width as the other two sidebars 
+     */
+    .main { flex: 2 0px; }
+    .aside-1 { order: 1; }
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; }
+  }
+  /* ASIDE END */
+  
+  
+  /* CONTAINERS BEGIN */
+  .mainContainer {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin-top: 64px;
+  }
+  
+  .dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    margin-left: 10px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+  /* CONTAINERS END */
+  
+  .header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+  }
+  
+  .bio {
+    text-align: left;
+    color: slategray;
+    margin-top: 16px;
+  }
+  .bio1 {
+  }
+  .bio2 {
+    margin-top: 16px;
+  }
+  .bio3 {
+    margin-top: 16px;
+  }
+  
+  .waveButton {
+    cursor: pointer;
+    margin-top: 16px;
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+    
+  }
+  
+  .spotifyInput {
+    margin-top: 16px;
+    width: 50%;
+  }
+  
+  .App {
+    height: 100vh;
+    background-color: #0d1116;
+    overflow: scroll;
+    text-align: center;
+  }
+  
+  .container {
+    height: 100%;
+    background-color: #0d1116;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .header-container {
+    padding-top: 30px;
+  }
+  
+  .header {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .sub-text {
+    font-size: 25px;
+  }
+  
+  .gradient-text {
+    background: -webkit-linear-gradient(left, #60c657 30%, #35aee2 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .cta-button {
+    height: 45px;
+    border: 0;
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .connect-wallet-button {
+    background: -webkit-linear-gradient(left, #60c657, #35aee2);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+  }
+  
+  .mint-button {
+    background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    margin-right: 15px;
+  }
+  
+  .opensea-button {
+    background-color: rgb(32, 129, 226);
+  }
+  
+  .mint-count {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .twitter-logo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer-text {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
