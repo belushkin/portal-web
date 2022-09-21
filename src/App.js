@@ -11,9 +11,14 @@ import abi from "./utils/WavePortal.json";
 const App = () => {
   const [allWaves, setAllWaves] = useState([]);
   const [currentAccount, setCurrentAccount] = useState("");
+  const [spotify, setSpotify] = useState('');
 
   const contractAddress = "0xa860B8613EB22fA41557C91AF24a4854be7a86dD";
   const contractABI = abi.abi;
+
+  const handleChange = event => {
+    setSpotify(event.target.value);
+  };
 
   const getAllWaves = async () => {
     const { ethereum } = window;
@@ -135,7 +140,7 @@ const App = () => {
         /*
         * Execute the actual wave from your smart contract
         */
-        const waveTxn = await waveportalContract.wave("this is the message", { gasLimit: 300000 })
+        const waveTxn = await waveportalContract.wave(spotify, { gasLimit: 300000 })
         console.log("Mining...", waveTxn.hash);
 
         await waveTxn.wait();
@@ -165,7 +170,14 @@ const App = () => {
         <Bio />
 
         <div>
-          <div><input className="spotifyInput" /></div>
+          <div><input
+            type="text"
+            id="spotify"
+            className="spotifyInput"
+            name="spotify"
+            onChange={handleChange}
+            value={spotify}
+          /></div>
           <div>
             <button className="waveButton" onClick={wave}>
               Wave at Me
