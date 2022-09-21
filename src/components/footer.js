@@ -1,7 +1,7 @@
 import React from "react";
 import twitterLogo from '../assets/twitter-logo.svg';
 
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = 'belushkin';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
           href={TWITTER_LINK}
           target="_blank"
           rel="noreferrer"
-        >{`built on @${TWITTER_HANDLE}`}</a>
+        >{`built by @${TWITTER_HANDLE}`}</a>
       </div>
     </div>
   );
