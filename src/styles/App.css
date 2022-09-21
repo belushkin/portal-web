@@ -41,7 +41,7 @@
   /* CONTAINERS BEGIN */
   .mainContainer {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     width: 100%;
     margin-top: 64px;
   }
